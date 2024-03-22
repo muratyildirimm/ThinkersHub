@@ -1,27 +1,29 @@
 body,
 html {
-  margin: 3;
+  margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
   background: url("/images/backgrounds/background.jpg") no-repeat center center
     fixed;
   background-size: cover;
-  height: 100vh; /* Tarayıcı penceresinin tam yüksekliğini kaplasın */
+  height: 100vh;
 }
 
 #navbar {
-  background: none; /* Arka planı kaldır */
-  color: white;
+  background: none;
+  color: rgb(4, 4, 4);
   padding: 10px 0;
-  position: fixed; /* Sabit pozisyon */
-  left: 0; /* Sol kenara yapışık */
-  top: 0; /* Üst kenardan itibaren */
-  bottom: 0; /* Alt kenara kadar uzanır */
+  position: fixed;
+  left: 0;
+  top: 30%;
+  bottom: 0;
   width: 20%;
-  overflow: auto; /* İçerik çok fazlaysa kaydırmaya izin ver */
+  overflow: auto;
   display: flex;
-  flex-direction: column; /* İçerikleri dikey olarak hizala */
-  justify-content: center; /* İçerikleri dikey olarak ortala */
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  z-index: 1;
 }
 
 #navbar ul {
@@ -29,29 +31,22 @@ html {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Liste öğelerini dikey olarak hizala */
+  flex-direction: column;
 }
 
 #navbar li a {
   display: block;
-  color: white; /* Daha canlı bir yazı rengi */
+  color: rgb(13, 12, 12);
   text-decoration: none;
-  padding: 10px 20px;
-  text-shadow: 1px 1px 2px black; /* Yazıların okunabilirliğini artır */
-  font-size: 20px; /* Yazı boyutunu büyüt */
+  padding: 15px 20px;
+  text-shadow: 1px 1px 2px black;
+  font-size: 22px;
 }
 
 #navbar li a:hover {
-  background: rgba(
-    197,
-    228,
-    242,
-    0.9
-  ); /* Hover durumunda arka planı hafif saydam yap */
-  border-radius: 5px; /* Kenarları yuvarlaklaştır */
+  background: rgba(247, 247, 247, 0.9);
+  border-radius: 5px;
 }
-
-/* ... Diğer stil tanımları ... */
 
 #header {
   padding: 60px;
@@ -59,8 +54,7 @@ html {
   text-align: center;
   position: relative;
   z-index: 1;
-  text-shadow: 2px 2px 4px #000; /* Text shadow for better readability */
-
+  text-shadow: 2px 2px 4px #000;
   margin-bottom: 1px;
 }
 
@@ -69,7 +63,7 @@ html {
 }
 
 #header p {
-  text-shadow: 1px 1px 3px #000; /* Text shadow for better readability */
+  text-shadow: 1px 1px 3px #000;
 }
 
 .buttons button {
@@ -79,19 +73,17 @@ html {
   padding: 10px 20px;
   margin: 10px;
   cursor: pointer;
-  box-shadow: 2px 2px 4px #000; /* Box shadow for better visibility */
+  box-shadow: 2px 2px 4px #000;
 }
 
-/* Responsive adjustments, etc. */
-
 .contact-form-container {
-  max-width: 600px;
-  margin: auto;
+  max-width: 800px;
+  margin: 50px auto;
   padding: 20px;
-  background: none; /* Hafif saydam beyaz arka plan */
+  background: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  backdrop-filter: blur(10px); /* Arkadaki görüntüyü hafif bulanıklaştır */
+  backdrop-filter: blur(10px);
 }
 
 #contact-form {
@@ -115,24 +107,22 @@ html {
   padding: 10px;
   border: 1px solid #bdd3d5;
   border-radius: 5px;
-  box-sizing: border-box; /* Padding ve border dahil olmak üzere toplam genişlik */
-  background: rgba(251, 251, 251, 0.9); /* İç alanlar hafif saydam */
+  box-sizing: border-box;
+  background: rgba(251, 251, 251, 0.9);
 }
 
 button[type="submit"] {
   padding: 10px 15px;
   background-color: #0fdd79;
-
   color: white;
   border: none;
   font-size: 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px; /* Mesaj alanından sonra biraz boşluk bırak */
+  margin-top: 10px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-form-container {
     width: 90%;
@@ -146,55 +136,43 @@ button[type="submit"] {
   align-items: flex-start;
   gap: 30px;
   padding: 20px;
-  margin-top: -20px; /* Üst boşluğu azaltarak container'ları yukarı çeker */
-  /* Diğer stiller sabit kalabilir */
+  margin-top: -20px;
 }
 
 .team-member {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Şeffaflık ekleyerek arka plana hafif bir görünürlük sağlar */
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  width: 300px; /* ya da ihtiyaca göre ayarlayın */
+  width: 300px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .team-member:hover {
-  transform: translateY(
-    -10px
-  ); /* Fare ile üzerine gelindiğinde hafif bir kaldırma efekti */
+  transform: translateY(-10px);
 }
 
 .team-photo {
-  width: 100%; /* Resmi container genişliğine sığdır */
-  border-radius: 50%; /* Daire şeklinde bir fotoğraf */
+  width: 100%;
+  border-radius: 50%;
   margin-bottom: 10px;
 }
 
 h3 {
-  text-align: center; /* Başlık metnini ortala */
+  text-align: center;
   margin-bottom: 5px;
 }
 
 .title {
-  text-align: center; /* Ünvan metnini ortala */
+  text-align: center;
   font-style: italic;
   margin-bottom: 10px;
 }
 
 .description {
-  font-size: 14px; /* Açıklama metninin boyutunu ayarla */
+  font-size: 14px;
   margin-bottom: 15px;
 }
-
-/* Burada sosyal medya ikonları için ek CSS tanımları olacak */
-
-/* ...önceki CSS kodları... */
 
 .social-links {
   text-align: center;
@@ -207,17 +185,15 @@ h3 {
 }
 
 .social-links img {
-  width: 24px; /* ya da ihtiyacınıza göre ayarlayın */
+  width: 24px;
   height: auto;
 }
 
-/* ...devamı... */
-
-/* ...diğer CSS kodları... */
-
 .blog-posts {
-  margin: 30px auto;
-  width: 62%;
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
 }
 
 .post {
@@ -226,6 +202,10 @@ h3 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
+  flex: 0 0 calc(32% - 50px); /* Postlar arasındaki boşluğu ekledik */
+
+  margin-left: 200px; /* Burada sola 50px'lik boşluk ekledik */
+  padding: 15px;
 }
 
 .post-image {
@@ -243,6 +223,10 @@ h3 {
   margin-bottom: 10px;
 }
 
+.post:last-child {
+  margin-right: 0;
+}
+
 .post-date {
   font-size: 14px;
   color: #666;
@@ -253,5 +237,3 @@ h3 {
   font-size: 16px;
   line-height: 1.6;
 }
-
-/* ...responsive ve diğer stil tanımları... */
